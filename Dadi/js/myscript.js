@@ -6,7 +6,7 @@
 
 // variabili globali
 const playButton = document.getElementById("play");
-let randomNumbUser, randomNumbPc;
+let randomNumbUser, randomNumbPc, risultato;
 
 // evento al button
 playButton.addEventListener("click", myFunction)
@@ -23,8 +23,24 @@ function myFunction () {
     console.log(randomNumbPc);
 
     // numero uscito
-    document.getElementById("NumUser").innerHTML= randomNumbUser
-    document.getElementById("NumPc").innerHTML= randomNumbPc
+    document.getElementById("NumUser").innerHTML = randomNumbUser
+    document.getElementById("NumPc").innerHTML = randomNumbPc
 
     // condizioni
+    if (randomNumbUser > randomNumbPc) {
+        risultato = "YOU WIN!"
+    }
+
+    else if (randomNumbUser < randomNumbPc) {
+        risultato = "YOU LOSE.."
+    }
+
+    else {
+        risultato = "DRAW"
+    }
+
+    console.log(risultato);
+
+    // output
+    document.getElementById("end").innerHTML = risultato
 }
