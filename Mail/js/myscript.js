@@ -7,7 +7,6 @@
 // variabili globali
 const mailConsentite = ["saraz@gmail.com", "franc22@gmail.com", "al-berto@gmail.com", "jhonny@gmail.com"];
 const buttonCheck = document.getElementById("check");
-let messaggioOutput;
 
 // evento al button
 buttonCheck.addEventListener('click', checkFunction)
@@ -33,16 +32,19 @@ function checkFunction() {
 
 
     // output
-    if (esito === "accetta") {
+    let messaggioOutput;
+
+    if (esito == "accetta") {
         messaggioOutput = "Accesso consentito."
     }
 
-    else if ( esito === "rifiuta") {
+    else if ( esito == "rifiuta") {
         messaggioOutput = "Mi dispiace, non puoi entrare."
     }
 
+    console.log(messaggioOutput);
+    document.getElementById("utente").innerHTML = messaggioOutput
 }
 
-console.log(messaggioOutput);
 
-document.getElementById("utente").innerHTML = messaggioOutput
+
